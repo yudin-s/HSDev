@@ -4,44 +4,36 @@ namespace App\Http\Controllers;
 
 use App\Element;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Cache;
 class ElementsController extends Controller
 {
+    private  $CACHE_KEY = 'ELEMENTS_HEAP';
+
+    //Retrive all data from cache
+
     public function index(Request $request){
-        $list = Element::all();
+        //$list = Element::all();
+        $list = [];
+        $array = json_decode(Cache::get($this->CACHE_KEY));
+        if($array){
+            $list = $array;
+        }else{
+            $list = [];
+        }
         return response()->json($list);
     }
 
-    public function create(Request $request){
+    //Store All data
 
-        $element = new Element();
+    public function store(Request $request){
 
-        $element->save();
 
+        $data = $request->get('elements');
+        Cache::forever($this->CACHE_KEY, $data);
         return response()->json(['message'=>'Item edited', 'success'=>true]);
 
     }
 
-    public function delete(Request $request){
-        $element = Element::findOrFail($request->get('id'));
-        $element->delete();
-        return response()->json(['message'=>'Item Removed', 'success'=>true]);
-    }
 
 
-    /**
-     *
-     * Mass store list with correct sequence
-     * @param Request $request
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function editAll(Request $request){
-        $element = Element::findOrFail($request->get('id'));
-
-        $element->fill($request->all());
-        $element->save();
-
-        return response()->json(['message'=>'Item edited', 'success'=>true]);
-
-    }
 }

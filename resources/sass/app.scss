@@ -1,28 +1,33 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
-
 // Variables
 @import 'variables';
-
 // Bootstrap
-
 @import '~bootstrap/scss/bootstrap';
 
-#app{
+#app {
   padding-top: 50px;
 }
 
-.element{
+.element {
   padding: 10px;
 
+  &:nth-child(2n) {
+    background: rgba(0, 0, 0, 0.2);
+
+  }
+
+  &:hover, &.focus {
+    background: rgba(0, 0, 255, 0.3);
+
+  }
 }
 
 
-.element:nth-child(2n){
-  background: rgba(0,0,0,0.2);
-}
-
-.element:hover, .element.focus{
-  background: rgba(0,0,255,0.3);
-
+.view {
+  .card-body {
+    input, button {
+      display: none;
+    }
+  }
 }

@@ -7203,10 +7203,11 @@ a.text-dark:hover, a.text-dark:focus {
 
 .element {
   padding: 10px; }
+  .element:nth-child(2n) {
+    background: rgba(0, 0, 0, 0.2); }
+  .element:hover, .element.focus {
+    background: rgba(0, 0, 255, 0.3); }
 
-.element:nth-child(2n) {
-  background: rgba(0, 0, 0, 0.2); }
-
-.element:hover, .element.focus {
-  background: rgba(0, 0, 255, 0.3); }
+.view .card-body input, .view .card-body button {
+  display: none; }
 

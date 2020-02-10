@@ -15,7 +15,7 @@
 </head>
 <body>
 <div id="app">
-    <main-view></main-view>
+    <main-view api_index="{{route('api.list.index')}}" api_store="{{route('api.list.store')}}"></main-view>
 </div>
 
 

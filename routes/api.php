@@ -16,3 +16,8 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::prefix('list')->group(function(){
+   Route::get('/index','ElementsController@index')->name('api.list.index');
+   Route::post('/store','ElementsController@store')->name('api.list.store');
+});
