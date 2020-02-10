@@ -5,4 +5,25 @@
 @import 'variables';
 
 // Bootstrap
+
 @import '~bootstrap/scss/bootstrap';
+
+#app{
+  padding-top: 50px;
+}
+
+.element{
+  padding-bottom: 10px;
+  padding-top: 10px;
+
+
+}
+
+.element:nth-child(2n){
+  background: rgba(255,255,255,0.1);
+}
+
+.element:nth-child(n){
+  background: rgba(255,255,255,0.5);
+
+}

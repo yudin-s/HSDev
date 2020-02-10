@@ -15,8 +15,10 @@
 </head>
 <body>
 <div id="app">
-    <MainView></MainView>
+    <main-view></main-view>
 </div>
+
+
 </body>
 <script src="/js/app.js"></script>
 
