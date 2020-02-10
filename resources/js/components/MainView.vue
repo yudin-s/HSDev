@@ -4,7 +4,7 @@
         <div class="row align-items-center justify-content-center">
             <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
                 <div v-if="elements.length">
-                    <div v-for="(element,index) in elements" class="element">
+                    <div v-for="(element,index) in elements" class="element" v-bind:class="{'focus': activeElement == index }">
 
 
                         <div class="row ">

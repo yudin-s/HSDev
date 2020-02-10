@@ -13,17 +13,16 @@
 }
 
 .element{
-  padding-bottom: 10px;
-  padding-top: 10px;
-
+  padding: 10px;
 
 }
+
 
 .element:nth-child(2n){
-  background: rgba(255,255,255,0.1);
+  background: rgba(0,0,0,0.2);
 }
 
-.element:nth-child(n){
-  background: rgba(255,255,255,0.5);
+.element:hover, .element.focus{
+  background: rgba(0,0,255,0.3);
 
 }
