@@ -7,6 +7,12 @@
     export default{
         data(){
         },
+        props: {
+            value:{
+                type: Object,
+
+            },
+        }
     }
 </script>
 

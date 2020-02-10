@@ -28,7 +28,14 @@ class ElementsController extends Controller
         return response()->json(['message'=>'Item Removed', 'success'=>true]);
     }
 
-    public function edit(Request $request){
+
+    /**
+     *
+     * Mass store list with correct sequence
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function editAll(Request $request){
         $element = Element::findOrFail($request->get('id'));
 
         $element->fill($request->all());
